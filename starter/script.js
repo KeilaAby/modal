@@ -1,4 +1,6 @@
 'use strict';
+
+//SHOWING MODAL
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
@@ -27,3 +29,13 @@ for (let index = 0; index < btnsOpenModal.length; index++) {
 //closing the modal
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+//KEYBOARD EVENTS
+document.addEventListener('keydown', function(event){
+
+  //Knowing what touch has been taped
+  if(event.key === "Escape" && !modal.classList.contains('hidden')){
+      closeModal()
+  }
+    
+})
